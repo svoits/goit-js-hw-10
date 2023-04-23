@@ -36,7 +36,7 @@ function onSearchInput(e) {
         refs.countryInfo.innerHTML = renderCountryInfo(data);
       }
     })
-    .catch(error => {
+    .catch(() => {
       return Notify.failure('Oops, there is no country with that name');
     });
 }
