@@ -36,7 +36,13 @@ function onSearchInput(e) {
         refs.countryInfo.innerHTML = renderCountryInfo(data);
       }
     })
-    .catch(() => {
-      return Notify.failure('Oops, there is no country with that name');
+    .catch(error => {
+      refs.countryInfo.innerHTML = '';
+      refs.countriesList.innerHTML = '';
+      if (error.message === '404') {
+        Notify.failure('Oops, there is no country with that name');
+      } else {
+        console.log(error);
+      }
     });
 }

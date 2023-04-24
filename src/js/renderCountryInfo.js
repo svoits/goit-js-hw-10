@@ -17,7 +17,7 @@ export function renderCountryInfo(data) {
             </li>
             <li class="country-info-item">
                 <span class="country-info-type">Languages:</span>
-                ${Object.values(languages)}
+                ${Object.values(languages).join(', ')}
             </li>
         </ul>`
     )
